@@ -1,0 +1,50 @@
+/*
+	Website Name: CUSTOMER_NAME
+	Designed by: Katherine Leonard, Car-Part.com
+	Version: 2.0
+	Modified by: DESIGNER_NAME
+	Last updated: 23 Feb 2024
+*/
+
+/* Styling for responsive pages */
+.container {
+	max-width: 95%;
+}
+
+@media screen and ( max-width: 1199px ) {
+	#mainMenu ul {
+		background-color: #000;
+	}
+	section.content, section.home {
+		padding: 0 1rem 0 2rem;
+	}
+}
+@media screen and ( max-width: 999px ) {
+	section .container.flex-parent-row, #pgFooter .container.flex-parent-row {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	section.home aside.flex-child-col {
+		order: 1;
+		width: auto;
+		max-width: 340px;
+		margin: auto;
+	}
+	section.home main.flex-child-col {
+		order: 1;
+		width: auto;
+		max-width: 100%;
+	}
+	#ftrBiz, #ftrDMV, #ftrContact {
+		margin: .5rem auto;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 699px) {
+	#pgFooter .block {
+		display: block;
+	}
+	#pgFooter .divider {
+		display: none;
+	}
+}

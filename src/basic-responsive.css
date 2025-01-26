@@ -1,0 +1,57 @@
+/*
+	Website Name: Responsive Styling for $100 Websites
+	Designed by: Katherine Leonard, Car-Part.com
+	Last updated: 23 Feb 2024
+*/
+
+@media screen and ( max-width: 1199px ) {
+	#mainMenu {
+		display: block;
+			height: 2.75rem;
+		position: relative;
+			z-index: 1;
+		-webkit-user-select: none;
+		user-select: none;
+		text-align: right;
+	}
+	#mainMenu input, #menuBtn {
+		display: block;
+	}
+	#menuBtn {
+		position: absolute;
+			top: .75rem;
+			right: .5rem;
+	}
+	#navCheck {
+		display: block;
+	}
+	#mainMenu ul.nav {
+		display: block;
+		text-align: right;
+		position: absolute;
+			top: 2rem;
+			right: 0;
+			max-width: 100vw;
+		margin: 0 0 0 -10vw;
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
+		transform-origin: 0% 0%;
+		transform: translate( 100vw, 0 );
+		transition: transform 0.5s cubic-bezier( 0.77,0.2,0.05,1.0 );
+	}
+	#mainMenu ul.nav li {
+		display: block;
+		padding: 1rem;
+		text-align: left;
+	}
+	#mainMenu input:checked ~ ul.nav {
+		transform: none;
+	}
+}
+@media screen and ( max-width: 699px ) {
+	ul.pymt .cc {
+		background-size: auto 100%;
+		border-radius: 3px;
+		font-size: 10px;
+	}
+}

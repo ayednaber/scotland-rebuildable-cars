@@ -1,0 +1,310 @@
+/*
+	Website Name: Basic Styling for $100 Websites
+	Designed by: Katherine Leonard, Car-Part.com
+	Version: 2.0
+	Last updated: 23 Apr 2024
+*/
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Kat's Frustration Fixes - http://www.kat-and-mouse.com/ */
+html,body{height:100%;overflow-x:hidden;overflow-y:auto}a{color:inherit}strong,b,bold{font-weight:700}em,i,italic{font-style:italic}.left{float:left;text-align:left}.center{float:none;margin:auto;text-align:center}.right{float:right;text-align:right}a[href^="tel"],a[href^="sms"],.noU{text-decoration:none}.showU{text-decoration:underline}.hover:hover{cursor:pointer}
+
+
+/* Reset Defaults */
+ol {
+	list-style-type: decimal;
+	padding-left: 2.5em;
+}
+ol li {
+	padding-left: .5em;
+}
+
+/* CSS Flex Elements */
+.flex-parent-row, .img-nav {
+	display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+}
+.flex-child-col, ul.img-nav li {
+	flex: 1 0 auto;
+}
+.flex-parent-col {
+	display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+}
+.flex-child-row {
+	flex: 1 0 auto;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.no-flex {
+	display: block;
+	flex-basis: 100%;
+}
+.two-even-col {
+	flex-basis: 50%;
+	max-width: 50%;
+}
+.three-even-col, .one-third-col {
+	flex-basis: 33%;
+	max-width: 33.3%;
+}
+.four-even-col {
+	flex-basis: 25%;
+	max-width: 25%;
+}
+.five-even-col {
+	flex-basis: 20%;
+	max-width: 20%;
+}
+.two-thirds-col {
+	flex-basis: 67%;
+	max-width: 67%;
+}
+
+
+/* Mobile Navigation Menu */
+#mainMenu {
+	display: block;
+	margin: auto;
+	position: relative;
+	text-align: center;
+}
+
+#mainMenu a {
+	color: inherit;
+	text-decoration: none;
+}
+#navCheck {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  right: 0;
+  width: 1em;
+  height: 0.125em;
+  border-top: 0.375em double #000;
+  border-bottom: 0.125em solid #000;
+}
+#mainMenu input {
+	display: block;
+		width: 2.5rem;
+		height: 2.5rem;
+	position: absolute;
+		top: 2px;
+		right: 0;
+	cursor: pointer;
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */
+	-webkit-touch-callout: none;
+}
+#mainMenu ul.nav li {
+	border-bottom: 2px solid transparent;
+	display: inline-block;
+	padding: 1rem;
+}
+#mainMenu ul.nav li:hover {
+}
+#menuBtn {
+	margin-right: 0;
+}
+#menuBtn span.hamburger {
+	display: block;
+		width: 33px;
+		height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+	background: #fff;
+	border-radius: 3px;
+	z-index: 1;
+	transform-origin: 0 0px;
+	transition: transform 0.5s cubic-bezier( 0.77,0.2,0.05,1.0 ),
+              background 0.5s cubic-bezier( 0.77,0.2,0.05,1.0 ),
+              opacity 0.55s ease;
+}
+
+#menuBtn span.hamburger:first-child {
+	transform-origin: 0% 0%;
+}
+#menuBtn span.hamburger:nth-child( 2 ) {
+	transform-origin: 0% 100%;
+}
+#mainMenu input:checked ~ #menuBtn span.hamburger {
+	opacity: 1;
+	transform: rotate( 45deg ) translate( -2px, -2px );
+}
+#mainMenu input:checked ~ #menuBtn span:nth-child( 2 ) {
+	opacity: 0;
+	transform: rotate( 0deg ) scale( 0.2, 0.2 );
+}
+#mainMenu input:checked ~ #menuBtn span:nth-child( 3 ) {
+	transform: rotate( -45deg ) translate( -3px, 0px );
+}
+#mainMenu input, #menuBtn {
+	display: none;
+}
+
+
+
+/* Image Navigation */
+ul.img-nav {
+	text-align: center;
+}
+ul.img-nav a {
+	text-decoration: inherit;
+}
+ul.img-nav li .flex-box {
+	padding: 1rem;
+}
+
+
+/* Association logos */
+ul.assoc {
+	text-align: center;
+}
+ul.assoc li {
+	display: inline-block;
+		vertical-align: middle;
+	margin: .2rem .1rem;
+}
+ul.assoc li img {
+	display: block;
+		max-height: 80px;
+		width: auto;
+}
+
+/* Sprite elements: payment types */
+ul.pymt {
+	text-align: center;
+}
+ul.pymt li {
+	display: inline-block;
+		vertical-align: middle;
+	margin: .2rem .1rem;
+}
+ul.pymt .cc {
+	background-size: auto 100%;
+	background-image: url( "../../graphics/payments.png" );
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	color: rgba( 0,0,0,0 );
+	display: block;
+		width: 3em;
+		height: 2em;
+	font-size: 20px;
+}
+ul.pymt .label { font-size: 0 }
+ul.pymt .visa { background-position: 0 0 }
+ul.pymt .mc { background-position: -3em 0 }
+ul.pymt .disc { background-position: -6em 0 }
+ul.pymt .paypal { background-position: -9em 0 }
+ul.pymt .amex { background-position: -12em 0 }
+ul.pymt .debit { background-position: -15em 0 }
+ul.pymt .dc { background-position: -18em 0 }
+ul.pymt .bc { background-position: -21em 0 }
+ul.pymt .apple { background-position: -24em 0 }
+ul.pymt .google { background-position: -27em 0 }
+ul.pymt .android { background-position: -30em 0 }
+ul.pymt .cash { background-position: -33em 0 }
+ul.pymt .interac { background-position: -36em 0 }
+ul.pymt .zelle { background-position: -39em 0 }
+ul.pymt .eft { background-position: -42em 0 }
+ul.pymt .venmo { background-position: -45em 0 }
+ul.pymt .cashapp { background-position: -48em 0 }
+
+/* Sprite elements: social media */
+ul.social {
+	display: block;
+	font-size: 40px;
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+}
+ul.social .label {
+	color: rgba( 0,0,0,0 );
+	font-size: 0;
+}
+ul.social li {
+	background-image: url( "../../graphics/social.png" );
+	background-repeat: no-repeat;
+	background-size: auto 300%;
+	display: block;
+		width: 1em;
+		height: 1em;
+		vertical-align: top;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+/* Rounded Corners */
+ul.rnd li {
+	border-radius: .125em;
+}
+	
+/* Circles */
+ul.cir li {
+	border-radius: 50%;
+}
+
+/* Full Color */
+ul.social .fb { background-position: 0 -2em }
+ul.social .tw { background-position: -1em -2em }
+ul.social .yt { background-position: -2em -2em }
+ul.social .li { background-position: -3em -2em }
+ul.social .pt { background-position: -4em -2em }
+ul.social .eb { background-position: -5em -2em }
+ul.social .yl { background-position: -6em -2em }
+ul.social .em { background-position: -7em -2em }
+ul.social .tx { background-position: -8em -2em }
+ul.social .ph { background-position: -9em -2em }
+ul.social .sk { background-position: -10em -2em }
+ul.social .ig { background-position: -11em -2em }
+ul.social .sms { background-position: -12em -2em }
+ul.social .tt { background-position: -13em -2em }
+ul.social .sc { background-position: -14em -2em }
+ul.social .wa { background-position: -15em -2em }
+	
+/* Black */
+ul.social .fb:hover { background-position: 0 -1em }
+ul.social .tw:hover { background-position: -1em -1em }
+ul.social .yt:hover { background-position: -2em -1em }
+ul.social .li:hover { background-position: -3em -1em }
+ul.social .pt:hover { background-position: -4em -1em }
+ul.social .eb:hover { background-position: -5em -1em }
+ul.social .yl:hover { background-position: -6em -1em }
+ul.social .em:hover { background-position: -7em -1em }
+ul.social .tx:hover { background-position: -8em -2em }
+ul.social .ph:hover { background-position: -9em -1em }
+ul.social .sk:hover { background-position: -10em -1em }
+ul.social .ig:hover { background-position: -11em -1em }
+ul.social .sms:hover { background-position: -12em -1em }
+ul.social .tt:hover { background-position: -13em -1em }
+ul.social .sc:hover { background-position: -14em -1em }
+ul.social .wa:hover { background-position: -15em -1em }
+	
+/* White */
+/* 
+ul.social .fb { background-position: 0 0 }
+ul.social .tw { background-position: -1em 0 }
+ul.social .yt { background-position: -2em 0 }
+ul.social .li { background-position: -3em 0 }
+ul.social .pt { background-position: -4em 0 }
+ul.social .eb { background-position: -5em 0 }
+ul.social .yl { background-position: -6em 0 }
+ul.social .em { background-position: -7em 0 }
+ul.social .tx { background-position: -8em 0 }
+ul.social .ph { background-position: -9em 0 }
+ul.social .sk { background-position: -10em 0 }
+ul.social .ig { background-position: -11em 0 }
+ul.social .sms { background-position: -12em 0 }
+ul.social .tt { background-position: -13em 0 }
+ul.social .sc { background-position: -14em 0 }
+ul.social .wa { background-position: -15em 0 }
+*/

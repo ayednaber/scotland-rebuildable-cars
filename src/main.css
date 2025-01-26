@@ -1,0 +1,241 @@
+/*
+	Website Name: SCOTLAND AUTO PARTS
+	Designed by: Katherine Leonard, Car-Part.com
+	Version: 2.0
+	Modified by: Gail Rider
+	Last updated: 11 JULY 2024
+*/
+
+html {
+	font-size: 18px;
+}
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: "Noto Sans", sans-serif;
+}
+
+#pgHeader {
+	background-color: #000;
+	color: #000;
+	position: relative;
+}
+#hlContact {
+  text-align: right;
+}
+    
+#highline {
+	background-color: #ff7501;
+	color: #000;
+	padding: .5rem;
+}
+#logoBlock {
+	display: block;
+	margin: auto;
+	padding: 2rem;
+}
+#logoBlock a {
+	text-decoration: none;
+}
+.logo {
+	display: block;
+		max-width: 350px;
+	margin: auto;
+	text-align: center;
+}
+.logo img {
+	display: block;
+		width: 100%;
+		height: auto;
+	margin: auto;
+}
+#logoBlock h1 {
+	display:none;
+	font-family: Oswald, "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
+}
+.nydmv {
+	display: none;	/* To display, change "none" to "inherit" */
+}
+#logoBlock .nydmv {
+	font-style: italic;
+	margin: 1rem auto;
+}
+
+#social {
+	color: transparent;
+	position: fixed;
+		top: calc( 50% - 4rem );	/* The vertical offset should be the number of icons to be shown times 2; e.g. FB, Instagram, and eBay icons showing should be ( 50% - 6rem ); */
+		left: 0;
+	z-index: 503;
+}
+
+#mainMenu {
+	background-color: #ff7501;
+	color: #fff;
+	font-family: Oswald, "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+#mainMenu a {
+	text-decoration: bold;
+}
+#mainMenu .mobile {
+	display: none;
+}
+#mainMenu ul li:hover {
+	background-color: #666;
+	color: #fff;
+}
+
+section .container {
+	padding: 1rem;
+}
+
+#hero {
+	background-attachment: fixed;
+    background-color: rgba( 0,0,0,.3);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+	display: block;
+}
+#hero.home {
+	background-image: url( "../../graphics/salvage-yard.jpg" );
+}
+#hero .container {
+	padding: 4rem 0;
+}
+#hero h1 {
+	color: #fca905;
+	font-family: Oswald, "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-size: 3rem;
+	font-weight: 700;
+	padding: 8rem 0;
+	text-align: center;
+	text-shadow: .05em .05em 0 rgba( 0,0,0,.3);
+    
+}
+
+#map {
+	height: 25vw;
+}
+#map iframe {
+	width: 100%;
+	height: 100%;
+}
+
+section.light {
+	background-color: #fff;
+	color: #000;
+}
+section.dark {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+}
+h1.pg-title {
+	font-family: "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+
+section.home aside.flex-child-col {
+	width: 300px;
+	margin: 0 0 1rem 1rem;
+}
+section.home aside .sb-box {
+	padding: 1rem;
+}
+section.home aside .sb-box h1 {
+	font-family: "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-weight: 700;
+	margin: -1rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+section.home aside .sb-border {
+	border: 2px solid #333;
+}
+section.home aside .sb-border h1 {
+	background-color: #fdc14d;
+	color: #000;
+}
+
+#bizHours h1 {
+	text-align: center;
+}
+ul.hours, ul.hours li, ul.phones, ul.phones li {
+	clear: both;
+	display: block;
+}
+ul.hours:after, ul.phones:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+#bizPhones, #bizAddr {
+	font-size: 1.25rem;
+	font-weight: 400;
+	text-align: center;
+}
+
+
+section.home main.flex-child-col {
+	width: calc( 100% - 340px - 6rem );
+	margin: 0 0 1rem 1rem;
+}
+
+.content main p {
+	margin-bottom: 1rem;
+}
+.content main ul {
+	margin-bottom: 1rem;
+}
+
+
+h1.callout {
+	font-family: Oswald, "Noto Sans", "Open Sans", "Helvetica Neue", Helvetica, Verdana, sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 1rem 0 2rem 0;
+	text-align: center;
+}
+
+
+ul.features {
+	list-style-type: square;
+	margin: .25em 1em 1em 3em;
+}
+
+#pgFooter {
+	font-size: .9rem;
+	padding: 1em;
+}
+#ftrBiz {
+	text-align: left;
+}
+#ftrDMV {
+	text-align: center;
+}
+#ftrContact {
+	text-align: right;
+}
+
+a.btn {
+	text-decoration: none;
+}
+div.btn, ul.btn li {
+	padding: 1rem;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;    
+}
+ul.pymt .cc {
+	box-shadow: 1px 1px 3px #000;
+}
