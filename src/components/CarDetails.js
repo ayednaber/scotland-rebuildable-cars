@@ -1,16 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import carsData from "../data/carsData";
+import axios from "axios"; // Import Axios for API calls
 import scotlandLogo from '../graphics/logo.png';
 import './CarDetails.css';
+import API_BASE_URL from "../config"; // Import your base API URL
 
 const CarDetails = () => {
-    const { id } = useParams();
-    const car = carsData.find((c) => c.id === parseInt(id));
+    const { id } = useParams(); // Get the car ID from the URL
+    const [car, setCar] = useState(null); // State to hold car data
+    const [currentImage, setCurrentImage] = useState(""); // State for the current image
+    const [loading, setLoading] = useState(true); // State for loading
+    const [error, setError] = useState(null); // State for error handling
 
-    // State to manage the currently displayed image
-    const [currentImage, setCurrentImage] = useState(car.images[0]);
+    // Fetch car details from the backend
+    useEffect(() => {
+        const fetchCarDetails = async () => {
+            try {
+                const response = await axios.get(`${API_BASE_URL}/cars/${id}`); // Fetch car by ID
+                setCar(response.data); // Set car data
+                setCurrentImage(response.data.images[0]); // Set the first image as default
+                setLoading(false);
+            } catch (err) {
+                setError("Failed to load car details. Please try again later.");
+                setLoading(false);
+            }
+        };
 
+        fetchCarDetails();
+    }, [id]);
+
+    // Show loading or error states
+    if (loading) {
+        return <p>Loading car details...</p>;
+    }
+
+    if (error) {
+        return <p>{error}</p>;
+    }
+
+    // If the car is not found (null), display a message
     if (!car) {
         return <h1>Car Not Found</h1>;
     }
@@ -49,7 +77,7 @@ const CarDetails = () => {
 	        </div>
 
             <div className="back-to-listings">
-                <Link className="back-link" to="/">←  Back to Listings</Link>
+                <Link className="back-link" to="/">← Back to Listings</Link>
             </div>
 
             <div className="car-info">
@@ -60,11 +88,11 @@ const CarDetails = () => {
                     </div>
                     <div className="thumbnail-gallery">
                         {car.images.map((img, index) => (
-                            <img 
-                                key={index} 
-                                src={img} 
-                                alt={`${car.name} thumbnail ${index + 1}`} 
-                                onClick={() => setCurrentImage(img)} 
+                            <img
+                                key={index}
+                                src={img}
+                                alt={`${car.name} thumbnail ${index + 1}`}
+                                onClick={() => setCurrentImage(img)}
                                 className={currentImage === img ? "active-thumbnail" : ""}
                             />
                         ))}
@@ -79,7 +107,7 @@ const CarDetails = () => {
                     <p><span>Brand:</span> {car.brand}</p>
                     <p><span>Year:</span> {car.year}</p>
                     <br />
-                    <p>Hello this is a sample description.</p>
+                    <p>{car.description || "No description available."}</p>
                 </div>
             </div>
         </div>
