@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import scotlandLogo from '../graphics/logo.png';
 import './ManageRebuildableCars.css';
 import AddCarForm from "./AddCarForm";
+import EditCarsPage from "./EditCarsPage";
 
 const ManageRebuildableCars = () => {
     const [manageState, SetManageState] = useState("add");
@@ -45,14 +46,14 @@ const ManageRebuildableCars = () => {
                         onClick={() => SetManageState("add")}>Add Cars</button>
                     <button
                         className={manageState === "edit" ? "manage-btn-active" : "manage-btn"}
-                        onClick={() => SetManageState("edit")}>Edit Cars</button>
-                    <button
-                        className={manageState === "delete" ? "manage-btn-active" : "manage-btn"}
-                        onClick={() => SetManageState("delete")}>Delete Cars</button>
+                        onClick={() => SetManageState("edit")}>Edit/Delete Cars</button>
                 </div>
 
                 {manageState === "add" && (
                     <AddCarForm />
+                )}
+                {manageState === "edit" && (
+                    <EditCarsPage />
                 )}
             </div>
         </div>

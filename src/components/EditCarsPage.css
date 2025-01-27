@@ -1,0 +1,72 @@
+.edit-cars-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.car-edit-form {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.car-edit-form h3 {
+    margin-top: 0;
+}
+
+.car-edit-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.car-edit-form input, .car-edit-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.car-edit-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.car-edit-form button:first-of-type {
+    background: #28a745;
+    color: #fff;
+}
+
+.car-edit-form button:last-of-type {
+    background: #dc3545;
+    color: #fff;
+}
+
+.car-details-not-editing {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.edit-car-img {
+    max-width: 200px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
